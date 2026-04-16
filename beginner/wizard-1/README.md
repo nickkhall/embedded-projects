@@ -2,13 +2,15 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Run The App
+## Setup + Run The App
 ```
 npm install && npm run dev
 ```
 
 ## See The App
 Port can be updated in `vite.config.js`
+
+Navigate to:
 `localhost:8050`
 
 Currently, two official plugins are available:
