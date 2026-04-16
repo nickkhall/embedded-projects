@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-stm32-bluepill",
+      "id": "bluepill",
+      "top": 77.63,
+      "left": 171.82,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led-red",
+      "top": 111.6,
+      "left": 61.4,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led-yellow",
+      "top": 164.6,
+      "left": 61.4,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led-green",
+      "top": 214.6,
+      "left": 61.4,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 301.55,
+      "left": 96,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 330.35,
+      "left": 96,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 359.15,
+      "left": 96,
+      "attrs": { "value": "220" }
+    },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": 153.6, "left": 28.2, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd2", "top": 201.6, "left": 28.2, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd3", "top": 259.2, "left": 28.2, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 63.8,
+      "left": 316.8,
+      "attrs": { "color": "yellow", "xray": "1" }
+    },
+    { "type": "wokwi-gnd", "id": "gnd4", "top": 124.8, "left": 306.6, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 200.3, "left": 355, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd5", "top": 336, "left": 373.8, "attrs": {} },
+    {
+      "type": "wokwi-7segment",
+      "id": "sevseg1",
+      "top": 14.58,
+      "left": 53.08,
+      "attrs": { "color": "yellow", "common": "cathode" }
+    }
+  ],
+  "connections": [
+    [ "$serialMonitor:TX", "bluepill:A10", "", [] ],
+    [ "$serialMonitor:RX", "bluepill:A9", "", [] ],
+    [ "led1:C", "gnd1:GND", "black", [ "v0", "h-28.4", "v-134.4" ] ],
+    [ "bluepill:A0", "r1:2", "red", [ "h24.22", "v74.61" ] ],
+    [ "led-green:C", "gnd3:GND", "green", [ "v0" ] ],
+    [ "led-yellow:C", "gnd2:GND", "gold", [ "v0" ] ],
+    [ "led-red:C", "gnd1:GND", "red", [ "v0" ] ],
+    [ "led-green:A", "r3:1", "green", [ "v12.2", "h-28.8", "v96" ] ],
+    [ "r2:1", "led-yellow:A", "gold", [ "v0", "h-28.8", "v-57.6", "h28.8", "v-67.2" ] ],
+    [ "r1:1", "led-red:A", "red", [ "v0", "h-9.6", "v-19.2", "h19.2", "v-134.4" ] ],
+    [ "r2:2", "bluepill:A1", "gold", [ "v0", "h123.6", "v-115.2" ] ],
+    [ "r3:2", "bluepill:A2", "green", [ "v0", "h133.2", "v-153.6" ] ],
+    [ "btn1:1.l", "bluepill:A3", "black", [ "h-48", "v124.8" ] ],
+    [ "gnd4:GND", "btn1:2.l", "black", [ "v0" ] ],
+    [ "gnd5:GND", "pot1:GND", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
