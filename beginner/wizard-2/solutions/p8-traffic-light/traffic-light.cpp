@@ -138,12 +138,15 @@ void loop() {
     case RED:
       setLights(false, false, true);
       clearDigit();
-
+      
       if (millis() - stateStartTime > RED_TIME) {
         currentState = GREEN;
         stateStartTime = millis();
+        setLights(true, false, false);
       }
 
       break;
-  }
+    }
+
+  delay(1);
 }
